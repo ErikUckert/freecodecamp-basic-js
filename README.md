@@ -5,4 +5,4 @@
 
 You can visit [freecodecamp.org](freecodecamp.org) for free lessons on programming and web dev.
 
-![Lessons](/img/lessons.png)
+![Lessons](/img/lectures.png)
