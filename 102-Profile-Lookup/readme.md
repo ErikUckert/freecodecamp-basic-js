@@ -1,32 +1,14 @@
-## Basic JavaScript: Replace Loops using Recursion
+## Basic JavaScript: Profile Lookup
 ----
 
-Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
+We have an array of objects representing different people in our contacts lists.
 
-```
-  function multiply(arr, n) {
-    var product = 1;
-    for (var i = 0; i < n; i++) {
-        product *= arr[i];
-    }
-    return product;
-  }
-```
+A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written for you.
 
-However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+The function should check if name is an actual contact's firstName and the given property (prop) is a property of that contact.
 
-```
-  function multiply(arr, n) {
-    if (n <= 0) {
-      return 1;
-    } else {
-      return multiply(arr, n - 1) * arr[n - 1];
-    }
-  }
-```
+If both are true, then return the "value" of that property.
 
-The recursive version of multiply breaks down like this. In the base case, where n <= 0, it returns 1. For larger values of n, it calls itself, but with n - 1. That function call is evaluated in the same way, calling multiply again until n <= 0. At this point, all the functions can return and the original multiply returns the answer.
+If name does not correspond to any contacts then return "No such contact".
 
-**Note**: Recursive functions must have a base case when they return without calling the function again (in this example, when n <= 0), otherwise they can never finish executing.
-
-**Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.**
+If prop does not correspond to any valid properties of a contact found to match name then return "No such property".
